@@ -10,9 +10,10 @@ export function myApply(this: Function, context: any, args: any[]) {
   // 将函数作为目标对象的临时 fn 属性，【隐式绑定】
   context.fn = this;
   // 以对象方法进行调用
-  context.fn(...args);
+  const result = context.fn(...args);
   // 删除临时 fn 属性
   delete context.fn;
+  return result;
 }
 
 /**
@@ -23,7 +24,7 @@ export function myApply(this: Function, context: any, args: any[]) {
  */
 export function myBind(this: Function, context: any): Function {
   return (...args: any[]) => {
-    this.myApply(context, args);
+    return this.myApply(context, args);
   };
 }
 
@@ -34,7 +35,7 @@ export function myBind(this: Function, context: any): Function {
  * @returns void
  */
 export function myCall(this: Function, context: any, ...args) {
-    this.myApply(context, args);
+  return this.myApply(context, args);
 }
 
 const prototype: any = Function.prototype;
