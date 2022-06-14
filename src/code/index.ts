@@ -2,5 +2,6 @@
 // import './throttle'
 // import './objectCreate'
 // import './instanceof'
-import './new'
+// import './new'
+import './bind-call-apply'
 
