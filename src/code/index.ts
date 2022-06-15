@@ -3,5 +3,6 @@
 // import './objectCreate'
 // import './instanceof'
 // import './new'
-import './bind-call-apply'
+// import './bind-call-apply'
+import './typeof'
 
