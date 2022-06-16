@@ -4,5 +4,7 @@
 // import './instanceof'
 // import './new'
 // import './bind-call-apply'
-import './typeof'
+// import './typeof'
+// import './curry'
+import './ajax'
 
