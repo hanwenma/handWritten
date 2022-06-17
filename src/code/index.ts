@@ -6,5 +6,6 @@
 // import './bind-call-apply'
 // import './typeof'
 // import './curry'
-import './ajax'
+// import './ajax'
+import './reactive'
 
