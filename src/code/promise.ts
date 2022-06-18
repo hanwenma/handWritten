@@ -47,8 +47,64 @@ export class MyPromise {
       });
     }
   }
+
+  static resolve(value) {
+    return new MyPromise(function (resolve, reject) {
+      if (value instanceof MyPromise) {
+        value.then(resolve, reject);
+      } else {
+      }
+      resolve(value);
+    });
+  }
+
+  static reject(value) {
+    return new MyPromise(function (resolve, reject) {
+      if (value instanceof MyPromise) {
+          value.then(resolve, reject);
+      } else {
+        reject(value);
+      }
+    });
+  }
+
+  static all(promiseArr: MyPromise[]) {
+    const result: any[] = [];
+    return new MyPromise(function (resolve, reject) {
+      promiseArr.forEach((p) => {
+        p.then(
+          (value) => {
+            result.push(value);
+            // 当两者的长度一致，表明所有 promise 执行完成，并结果都是成功的
+            if (promiseArr.length === result.length) {
+              resolve(result);
+            }
+          },
+          (reason) => {
+            reject(reason);
+          }
+        );
+      });
+    });
+  }
+
+  static race(promiseArr: MyPromise[]) {
+    return new MyPromise(function (resolve, reject) {
+      promiseArr.forEach((p) => {
+        p.then(
+          (value) => {
+            resolve(value);
+          },
+          (reason) => {
+            reject(reason);
+          }
+        );
+      });
+    });
+  }
 }
 
+// then
 MyPromise.prototype.then = function (onResolve, onReject) {
   // 保证 onResolve & onReject 为函数
   // 主要是为了 .then().then((v)=>v) 的情况，称之为 then 穿透
