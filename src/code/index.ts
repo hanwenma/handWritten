@@ -7,5 +7,6 @@
 // import './typeof'
 // import './curry'
 // import './ajax'
-import './reactive'
+// import './reactive'
+import './promise'
 
