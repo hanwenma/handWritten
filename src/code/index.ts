@@ -8,5 +8,6 @@
 // import './curry'
 // import './ajax'
 // import './reactive'
-import './promise'
+// import './promise'
+import './clone'
 
