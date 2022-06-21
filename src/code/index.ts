@@ -9,5 +9,6 @@
 // import './ajax'
 // import './reactive'
 // import './promise'
-import './clone'
+// import './clone'
+import './lazyMan'
 
