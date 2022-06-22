@@ -10,5 +10,7 @@
 // import './reactive'
 // import './promise'
 // import './clone'
-import './lazyMan'
+// import './lazyMan'
+// import './setInterval'
+import './v-model'
 
