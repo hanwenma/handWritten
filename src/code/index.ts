@@ -12,5 +12,6 @@
 // import './clone'
 // import './lazyMan'
 // import './setInterval'
-import './v-model'
+// import './v-model'
+import './array-sort'
 
