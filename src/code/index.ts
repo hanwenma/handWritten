@@ -13,5 +13,6 @@
 // import './lazyMan'
 // import './setInterval'
 // import './v-model'
-import './array-sort'
+// import './array-sort'
+import './eventBus'
 
