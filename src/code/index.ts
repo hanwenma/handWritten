@@ -14,5 +14,6 @@
 // import './setInterval'
 // import './v-model'
 // import './array-sort'
-import './eventBus'
+// import './eventBus'
+import './compose'
 
