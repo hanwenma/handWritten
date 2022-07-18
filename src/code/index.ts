@@ -15,5 +15,7 @@
 // import './v-model'
 // import './array-sort'
 // import './eventBus'
-import './compose'
+// import './compose'
+// import './array-basic'
+import './inherit'
 
