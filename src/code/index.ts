@@ -17,5 +17,6 @@
 // import './eventBus'
 // import './compose'
 // import './array-basic'
-import './inherit'
+// import './inherit'
+import './scheduler'
 
