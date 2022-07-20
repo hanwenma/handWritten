@@ -18,5 +18,6 @@
 // import './compose'
 // import './array-basic'
 // import './inherit'
-import './scheduler'
+// import './scheduler'
+import './deepClone'
 
