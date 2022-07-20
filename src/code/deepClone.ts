@@ -25,7 +25,6 @@ export function deepClone(target: any, hash: any = new WeakMap()) {
       newTargrt[key] = target[key];
     }
   });
-
   return newTargrt;
 }
 

@@ -5,7 +5,7 @@
  * @returns newHandler
  */
 export function debounce(handler: Function, delay: number = 200): any {
-  let timer: number = 0;
+  let timer: any = 0;
   return function inner(this: typeof inner, ...args: any[]) {
     if (timer) clearTimeout(timer);
     timer = setTimeout(() => handler.apply(null, args), delay);
