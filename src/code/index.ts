@@ -20,4 +20,5 @@
 // import './inherit'
 // import './scheduler'
 // import './deepClone'
-import "./lazyManWithPromise.ts"
+// import "./lazyManWithPromise.ts"
+import "./sort-version.ts"
