@@ -19,4 +19,5 @@
 // import './array-basic'
 // import './inherit'
 // import './scheduler'
-import './deepClone'
+// import './deepClone'
+import "./lazyManWithPromise.ts"
