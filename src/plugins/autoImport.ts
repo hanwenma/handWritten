@@ -1,24 +1,54 @@
 import fs from "fs";
 import path from "path";
 
+// 默认文件目录
 const defaultPath = path.resolve(__dirname, "../", "./code");
-const defaultAppendPath = path.resolve(__dirname, "../", "./code/index.ts");
+// 默认导入文件路径
+const defaultImportPath = path.resolve(__dirname, "../", "./code/index.ts");
 
 // 追加文件内容
-function appendAction(appendContent) {
-  fs.appendFile(defaultAppendPath, appendContent, function (error) {
+function appendFile(appendContent) {
+  fs.appendFile(defaultImportPath, appendContent, function (error) {
     if (error) {
-      console.log("~ 自动导入文件失败 ~");
+      console.log("~ 自动导入文件【失败】 ~");
       return;
     }
-    console.log("~ 自动导入文件成功 ~");
+    console.log("~ 自动导入文件【成功】 ~");
   });
 }
 
 // 重写文件内容
 function rewriteFile(repalceStr, content) {
-  const rawContent = fs.readFileSync(defaultAppendPath, { encoding: "utf8" });
-  fs.writeFileSync(defaultAppendPath, rawContent.replace(repalceStr, content));
+  const rawContent = fs.readFileSync(defaultImportPath, { encoding: "utf8" });
+  fs.writeFileSync(defaultImportPath, rawContent.replace(repalceStr, content));
+}
+
+// 监听文件
+function watchFile(dirPath) {
+  fs.watch(
+    dirPath,
+    {
+      encoding: "utf-8",
+    },
+    (eventType, filename: string) => {
+      // 重命名文件、新增文件、删除文件时触发
+      if (eventType === "rename") {
+        const filePath = path.join(defaultPath, `/${filename}`);
+        fs.access(filePath, (error: any) => {
+          // 判断是否存在对应文件
+          if (error) {
+            // 不存在文件则将对应文件的导入语句清除
+            const repalceStr = `import "./${filename}"`;
+            rewriteFile(repalceStr, "");
+          } else {
+            // 存在对应文件则向目标文件添加导入语句
+            const appendContent = `\nimport "./${filename}"`;
+            appendFile(appendContent);
+          }
+        });
+      }
+    }
+  );
 }
 
 export default function () {
@@ -26,30 +56,7 @@ export default function () {
     name: "vite-plugin-vue-auto-import",
     apply: "serve", // 指明它们仅在 'build' 或 'serve' 模式时调用
     buildStart() {
-      fs.watch(
-        defaultPath,
-        {
-          encoding: "utf-8",
-        },
-        (eventType, filename: string) => {
-          // 重命名文件、新增文件、删除文件
-          if (eventType === "rename") {
-            const filePath = path.join(defaultPath, `/${filename}`);
-            fs.access(filePath, (error: any) => {
-              // 判断是否存在对应文件
-              if (error) {
-                // 不存在重写文件内容
-                const repalceStr = `import "./${filename}"`;
-                rewriteFile(repalceStr,'');
-              } else {
-                // 存在文件则自动导入文件
-                const appendContent = `\nimport "./${filename}"`;
-                appendAction(appendContent);
-              }
-            });
-          }
-        }
-      );
+      watchFile(defaultPath);
     },
   };
 }
