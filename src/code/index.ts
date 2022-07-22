@@ -22,4 +22,5 @@
 // import './deepClone'
 // import "./lazyManWithPromise.ts"
 // import "./sort-version.ts"
-import "./LRU.ts"
+// import "./LRU.ts"
+import "./dom2json.ts"
