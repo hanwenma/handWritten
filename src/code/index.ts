@@ -23,4 +23,6 @@
 // import "./lazyManWithPromise.ts"
 // import "./sort-version.ts"
 // import "./LRU.ts"
-import "./dom2json.ts"
+// import "./dom2json.ts"
+// import "./object-is.ts"
+import "./renderDom.ts"
