@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 
 // 默认文件目录
-const defaultPath = path.resolve(__dirname, "../", "./code");
+const defaultDirPath = path.resolve(__dirname, "../", "./code");
 // 默认导入文件路径
 const defaultImportPath = path.resolve(__dirname, "../", "./code/index.ts");
 
@@ -23,7 +23,7 @@ function rewriteFile(repalceStr, content) {
   fs.writeFileSync(defaultImportPath, rawContent.replace(repalceStr, content));
 }
 
-// 监听文件
+// 监听对应目录下文件的变化
 function watchFile(dirPath) {
   fs.watch(
     dirPath,
@@ -33,7 +33,7 @@ function watchFile(dirPath) {
     (eventType, filename: string) => {
       // 重命名文件、新增文件、删除文件时触发
       if (eventType === "rename") {
-        const filePath = path.join(defaultPath, `/${filename}`);
+        const filePath = path.join(defaultDirPath, `/${filename}`);
         fs.access(filePath, (error: any) => {
           // 判断是否存在对应文件
           if (error) {
@@ -53,10 +53,10 @@ function watchFile(dirPath) {
 
 export default function () {
   return {
-    name: "vite-plugin-vue-auto-import",
+    name: "rollup-plugin-simple-auto-import",
     apply: "serve", // 指明它们仅在 'build' 或 'serve' 模式时调用
     buildStart() {
-      watchFile(defaultPath);
+      watchFile(defaultDirPath);
     },
   };
 }
