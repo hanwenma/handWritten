@@ -25,5 +25,5 @@
 // import "./LRU.ts"
 // import "./dom2json.ts"
 // import "./object-is.ts"
-import "./renderDom.ts"
-
+// import "./renderDom.ts"
+import "./compile-template.ts"
