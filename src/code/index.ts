@@ -26,4 +26,5 @@
 // import "./dom2json.ts"
 // import "./object-is.ts"
 // import "./renderDom.ts"
-import "./compile-template.ts"
+// import "./compile-template.ts"
+import "./flatten.ts"
