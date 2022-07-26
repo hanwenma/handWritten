@@ -29,4 +29,5 @@
 // import "./compile-template.ts"
 // import "./flatten.ts"
 // import "./bigNum.ts"
-import "./listToTree.ts"
+// import "./listToTree.ts"
+import "./treeToList.ts"
