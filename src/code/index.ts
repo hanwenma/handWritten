@@ -28,4 +28,5 @@
 // import "./renderDom.ts"
 // import "./compile-template.ts"
 // import "./flatten.ts"
-import "./bigNum.ts"
+// import "./bigNum.ts"
+import "./listToTree.ts"
