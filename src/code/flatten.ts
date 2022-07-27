@@ -66,5 +66,5 @@ const obj = {
   c: 3,
 };
 
-const rs = flatten1(obj);
+const rs = flattenAgain(obj);
 console.log(rs);
