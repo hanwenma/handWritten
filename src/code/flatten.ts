@@ -28,6 +28,33 @@ export default function flatten(data: any) {
   return res;
 }
 
+function flattenAgain(data: any) {
+  const res = {};
+
+  function genData(obj, keyStr = "") {
+    for (const key in obj) {
+      const item = obj[key];
+      const realKey = keyStr ? `${keyStr}.${key}` : key;
+
+      if (isObject(item)) {
+        if (Array.isArray(item)) {
+          item.forEach((v, i) => {
+            genData(v, `${realKey}[${i}]`);
+          });
+        }else{
+          genData(item, realKey);
+        }
+      } else {
+        res[realKey] = item;
+      }
+    }
+  }
+
+  genData(data);
+
+  return res;
+}
+
 // 测试
 const obj = {
   a: {
@@ -39,5 +66,5 @@ const obj = {
   c: 3,
 };
 
-const rs = flatten(obj);
+const rs = flatten1(obj);
 console.log(rs);
