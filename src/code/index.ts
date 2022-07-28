@@ -31,4 +31,5 @@
 // import "./bigNum.ts"
 // import "./listToTree.ts"
 // import "./treeToList.ts"
-import "./arraySort.ts"
+// import "./arraySort.ts"
+import "./binary-search.ts"
