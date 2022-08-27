@@ -152,7 +152,7 @@ function mergeArray<T>(arr1: T[], arr2: T[]): T[] {
 /**
  * =========== 快速排序 ===========
  * @param arr
- * @returns 时间复杂度：O(nlog(n))
+ * @returns 时间复杂度：O(nlog(n)) ~ O(n^2)
  *
  * 1、选择一个基准值
  * 2、使用左指针、右指针遍历数组，这一步需要遍历来划分出两个子数组，

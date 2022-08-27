@@ -15,4 +15,21 @@ import './clone'
 // import './v-model'
 // import './array-sort'
 // import './eventBus'
-
+// import './compose'
+// import './array-basic'
+// import './inherit'
+// import './scheduler'
+// import './deepClone'
+// import "./lazyManWithPromise.ts"
+// import "./sort-version.ts"
+// import "./LRU.ts"
+// import "./dom2json.ts"
+// import "./object-is.ts"
+// import "./renderDom.ts"
+// import "./compile-template.ts"
+// import "./flatten.ts"
+// import "./bigNum.ts"
+// import "./listToTree.ts"
+// import "./treeToList.ts"
+// import "./arraySort.ts"
+// import "./binary-search.ts"
