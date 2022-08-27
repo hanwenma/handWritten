@@ -82,11 +82,28 @@ const arr = ["string", 100, { name: "ls", age: 20 }, [{ a: 1, b: 2 }]];
 // console.log(arr1[2] === arr[2]);
 
 
-const obj2 = deepClone(obj);
-const arr2 = deepClone(arr);
+const obj2 = simpleDeepClone(obj);
+const arr2 = simpleDeepClone(arr);
 
 console.log(obj2, obj);
 console.log(obj2 === obj);
 console.log(obj2.friends === obj.friends);
 console.log(arr2 === arr);
 console.log(arr2[2] === arr[2]);
+
+function isObject(target:any){
+  return typeof target === 'object' && target !== null;
+}
+
+function simpleDeepClone(target: any){
+  // 基本数据类型
+  if(!isObject(target)) return target;
+
+  const res = Array.isArray(target) ? [] : {};
+
+  for (const key in target) {
+      res[key] = simpleDeepClone(target[key]);
+  }
+
+  return res;
+}

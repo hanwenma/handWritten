@@ -9,10 +9,10 @@
 // import './ajax'
 // import './reactive'
 // import './promise'
-// import './clone'
+import './clone'
 // import './lazyMan'
 // import './setInterval'
 // import './v-model'
 // import './array-sort'
-import './eventBus'
+// import './eventBus'
 
