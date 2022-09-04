@@ -95,6 +95,7 @@ function isObject(target:any){
   return typeof target === 'object' && target !== null;
 }
 
+// 简单深拷贝
 function simpleDeepClone(target: any){
   // 基本数据类型
   if(!isObject(target)) return target;
@@ -103,6 +104,31 @@ function simpleDeepClone(target: any){
 
   for (const key in target) {
       res[key] = simpleDeepClone(target[key]);
+  }
+
+  return res;
+}
+
+
+// 复杂深拷贝
+function complexDeepClone(target: any){
+  // 基本数据类型
+  if(!isObject(target)) return target;
+
+  // 函数
+  if(target instanceof Function) return target;
+
+  // 日期
+  if(target instanceof Date) return new Date(target);
+
+  // 正则
+  if(target instanceof RegExp) return new RegExp(target);
+
+  // 普通对象和数组
+  const res = Array.isArray(target) ? [] : {};
+
+  for (const key in target) {
+      res[key] = complexDeepClone(target[key]);
   }
 
   return res;

@@ -196,3 +196,7 @@ function partition(array, L, R) {
 // 测试
 const arr = [5, 1, 4, 3, 7, 6, 9, 8];
 console.log("finaly = ", quickSort(arr));
+
+
+
+
