@@ -20,7 +20,7 @@ export function deepClone(target: any, hash: any = new WeakMap()) {
 
   Reflect.ownKeys(target).forEach((key) => {
     if (isObject(target[key])) {
-      newTargrt[key] = deepClone(target[key]);
+      newTargrt[key] = deepClone(target[key], hash);
     } else {
       newTargrt[key] = target[key];
     }
@@ -29,7 +29,7 @@ export function deepClone(target: any, hash: any = new WeakMap()) {
 }
 
 // 测试
-const obj1 = {
+const obj1:any = {
   a: 1,
   b: true,
   c: undefined,
@@ -44,6 +44,8 @@ const obj1 = {
     console.log("hello world!");
   },
 };
+
+obj1.circle = obj1
 
 const obj2 = deepClone(obj1);
 
