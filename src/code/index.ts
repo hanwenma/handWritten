@@ -34,4 +34,5 @@
 // import "./arraySort.ts"
 // import "./binary-search.ts"
 // import "./averageTimes.ts"
-import "./reduce"
+// import "./reduce"
+import "./async.ts"
