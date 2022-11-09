@@ -33,6 +33,5 @@
 // import "./treeToList.ts"
 // import "./arraySort.ts"
 // import "./binary-search.ts"
-// import "./averageTimes.ts"
-// import "./reduce"
-import "./async.ts"
+
+import "./averageTimes.ts"
