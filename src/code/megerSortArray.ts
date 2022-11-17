@@ -1,5 +1,4 @@
 // 合并两个有序数组，输出的数组保证是有序的
-
 export function mergeSortArray(nums1, nums2) {
     let i = nums1.length - 1;
     let j = nums2.length - 1;
@@ -18,19 +17,12 @@ export function mergeSortArray(nums1, nums2) {
         }
     }
 
-    // 将剩余的值，进行填充
-    while (i >= 0 || j >= 0) {
-        if (i >= 0) {
-            nums1[k] = nums1[i]
-            i--
-            k--
-        } else {
-            nums1[k] = nums2[j]
-            j--
-            k--
-        }
+    // 考虑 nums2 剩余的值直接进行填充
+    while (j >= 0) {
+        nums1[k] = nums2[j]
+        j--
+        k--
     }
-
 
     return nums1
 }
