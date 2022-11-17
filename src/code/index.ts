@@ -19,7 +19,7 @@
 // import './array-basic'
 // import './inherit'
 // import './scheduler'
-import './deepClone'
+// import './deepClone'
 // import "./lazyManWithPromise.ts"
 // import "./sort-version.ts"
 // import "./LRU.ts"
@@ -34,3 +34,4 @@ import './deepClone'
 // import "./arraySort.ts"
 // import "./binary-search.ts"
 // import "./averageTimes.ts"
+import "./megerSortArray"
