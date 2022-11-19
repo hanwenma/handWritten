@@ -36,4 +36,5 @@
 // import "./averageTimes.ts"
 // import "./megerSortArray"
 
-import "./threeSum.ts"
+// import "./threeSum.ts"
+import "./validPalindrome.ts"
