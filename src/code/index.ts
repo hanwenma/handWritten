@@ -34,4 +34,6 @@
 // import "./arraySort.ts"
 // import "./binary-search.ts"
 // import "./averageTimes.ts"
-import "./megerSortArray"
+// import "./megerSortArray"
+
+import "./threeSum.ts"
