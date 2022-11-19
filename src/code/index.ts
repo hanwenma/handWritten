@@ -35,6 +35,7 @@
 // import "./binary-search.ts"
 // import "./averageTimes.ts"
 // import "./megerSortArray"
-
 // import "./threeSum.ts"
-import "./validPalindrome.ts"
+// import "./validPalindrome.ts"
+
+import "./wordDictionary.ts"
