@@ -33,5 +33,5 @@
 // import "./treeToList.ts"
 // import "./arraySort.ts"
 // import "./binary-search.ts"
-
-import "./averageTimes.ts"
+// import "./averageTimes.ts"
+import "./megerSortArray"
