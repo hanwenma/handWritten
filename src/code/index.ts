@@ -38,4 +38,5 @@
 // import "./threeSum.ts"
 // import "./validPalindrome.ts"
 
-import "./wordDictionary.ts"
+// import "./wordDictionary.ts"
+import "./myAtoi.ts"
