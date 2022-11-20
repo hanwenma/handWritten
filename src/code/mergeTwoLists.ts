@@ -7,7 +7,7 @@
   输出：1->1->2->3->4->4
 */
 
-function ListNode(this: any, vals: number[]) {
+export function ListNode(this: any, vals: number[]) {
   this.val = vals.shift();
   this.next = vals.length === 0 ? null : new ListNode(vals);
 }
