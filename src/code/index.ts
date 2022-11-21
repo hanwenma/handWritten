@@ -42,4 +42,5 @@
 // import "./mergeTwoLists.ts"
 // import "./deleteDuplicates.ts"
 
-import "./noRepeatListNode.ts"
+// import "./noRepeatListNode.ts"
+import "./removeNthFromEnd.ts"

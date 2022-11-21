@@ -59,4 +59,4 @@ export function mergeTwoLists(l1, l2) {
 const l1 = new ListNode([1, 2, 4]);
 const l2 = new ListNode([1, 3, 4]);
 
-console.log(mergeTwoLists(l1, l2));
+// console.log(mergeTwoLists(l1, l2));
