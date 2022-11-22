@@ -18,6 +18,8 @@ export function reverseBetween(head, m, n) {
   let cur = pre.next;
   // 开始重复反转动作
   for (let i = m; i < n; i++) {
+    // 第一次： pre = 2  cur = 3  next = 4   3 -> 2
+    // 第二次：       3        4         5   4 -> 3 -> 2
     let next = cur.next;
     cur.next = pre;
     pre = cur;
