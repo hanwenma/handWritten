@@ -6,11 +6,14 @@
   输入：1->2->4, 1->3->4 
   输出：1->1->2->3->4->4
 */
-
-export function ListNode(this: any, vals: number[] = []) {
+ListNode.last = null
+export function ListNode(this: any, vals: number[] = [], loop = false) {
   this.val = vals.shift() || -1;
-  this.next = vals.length === 0 ? null : new ListNode(vals);
+  this.next = vals.length === 0 ? null : new ListNode(vals, loop);
+
+  if(loop && !ListNode.last) ListNode.last = this;
 }
+
 
 export function mergeTwoLists(l1, l2) {
   // 创建新链表
