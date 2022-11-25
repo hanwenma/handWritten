@@ -33,6 +33,8 @@ export function maxSlidingWindow(nums: number[], k: number) {
     return res;
 }
 
+
+// 双指针 + 循环法  O(kn)
 export function getMaxVal(arr: number[], l: number, r: number) {
     let max = arr[l]
 
@@ -44,5 +46,39 @@ export function getMaxVal(arr: number[], l: number, r: number) {
     return max
 }
 
+// 双指针 + 双端队列  O(n)
+export function maxSlidingWindowWithDeque(nums: number[], k: number) {
+    const res: number[] = []
+    const len = nums.length
+
+
+    // 双端队列：递减队列
+    const deque: number[] = []
+
+    for (let i = 0; i < len; i++) {
+        // 当前元素大于 队列 的最后一个元素时，将其出队
+        while (deque.length && nums[deque[deque.length - 1]] < nums[i]) {
+            deque.pop()
+        }
+
+        // 当前索引入队列，便于后续判断
+        deque.push(i)
+
+        // 当队头元素的索引已经被排除在滑动窗口之外时
+        while (deque.length && deque[0] <= i - k) {
+            // 将队头元素索引出队
+            deque.shift();
+        }
+
+        // 判断滑动窗口的状态，只有在被遍历的元素个数大于 k 的时候，才更新结果数组
+        if (i >= k - 1) {
+            res.push(nums[deque[0]]);
+        }
+    }
+
+    return res;
+}
+
 // 测试
 console.log(maxSlidingWindow([1, 3, -1, -3, 5, 3, 6, 7], 3));
+console.log(maxSlidingWindowWithDeque([1, 3, -1, -3, 5, 3, 6, 7], 3));
