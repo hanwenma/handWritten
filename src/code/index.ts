@@ -50,4 +50,5 @@
 // import "./dailyTemperatures.ts"
 // import "./MinStack.ts"
 // import "./queue.ts"
-import "./maxSlidingWindow.ts"
+// import "./maxSlidingWindow.ts"
+import "./permute.ts"
