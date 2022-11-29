@@ -51,4 +51,7 @@
 // import "./MinStack.ts"
 // import "./BFS.ts"
 
-import "./DFC.ts"
+// import "./DFC.ts"
+// import "./preorderTraversal.ts"
+// import "./postorderTraversal.ts"
+import "./mesoorderTraversal.ts"
