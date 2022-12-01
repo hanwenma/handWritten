@@ -56,4 +56,6 @@
 // import "./mesoorderTraversal.ts"
 
 // import "./levelOrder.ts"
-import "./invertTree.ts"
+// import "./invertTree.ts"
+
+import "./insertIntoBST.ts"
