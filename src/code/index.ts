@@ -48,14 +48,4 @@
 // import "./hasCycle.ts"
 // import "./isValid.ts"
 // import "./dailyTemperatures.ts"
-// import "./MinStack.ts"
-// import "./BFS.ts"
-// import "./DFC.ts"
-// import "./preorderTraversal.ts"
-// import "./postorderTraversal.ts"
-// import "./mesoorderTraversal.ts"
-
-// import "./levelOrder.ts"
-// import "./invertTree.ts"
-
-import "./insertIntoBST.ts"
+import "./MinStack.ts"
