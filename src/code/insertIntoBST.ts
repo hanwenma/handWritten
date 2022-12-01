@@ -15,30 +15,16 @@
 */
 
 export function insertIntoBST(root, node) {
-  if (!root) return root;
+  if (!root) return node;
 
   // 根节点数据域 > 目标数据域，则需要往左子树上查找
   if (root.val > node.val) {
-    insertIntoBST(root.left, node);
-  } else if (root.val < node.val) {
-    // 根节点数据域 > 目标数据域，则需要往左子树上查找
-    insertIntoBST(root.right, node);
+    root.left = insertIntoBST(root.left, node);
   } else {
-    // 查到符合的节点
-
-    // 只有右节点
-    if (!root.left && root.right) {
-      root.left = node;
-      return;
-    }
-    // 只有左节点
-    if (!root.right && root.left) {
-      root.right = node;
-      return;
-    }
-
-    insertIntoBST(root.left || root.right, node);
+    // 根节点数据域 >= 目标数据域，则需要往左子树上查找
+    root.right = insertIntoBST(root.right, node);
   }
+
   return root;
 }
 
@@ -50,9 +36,9 @@ const root = {
     left: {
       val: "1",
     },
-    right: {
-      val: "2",
-    },
+    // right: {
+    //   val: "2",
+    // },
   },
   right: {
     val: "5",

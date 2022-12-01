@@ -48,4 +48,5 @@
 // import "./hasCycle.ts"
 // import "./isValid.ts"
 // import "./dailyTemperatures.ts"
-import "./MinStack.ts"
+// import "./MinStack.ts"
+import "./insertIntoBST"
