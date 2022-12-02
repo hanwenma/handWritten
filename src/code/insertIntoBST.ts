@@ -36,9 +36,6 @@ const root = {
     left: {
       val: "1",
     },
-    // right: {
-    //   val: "2",
-    // },
   },
   right: {
     val: "5",
