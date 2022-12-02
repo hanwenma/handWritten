@@ -50,4 +50,5 @@
 // import "./dailyTemperatures.ts"
 // import "./MinStack.ts"
 // import "./insertIntoBST"
-import "./deleteNode.ts"
+// import "./deleteNode.ts"
+import "./isValidBST.ts"
