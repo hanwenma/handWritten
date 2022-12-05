@@ -52,4 +52,5 @@
 // import "./insertIntoBST"
 // import "./deleteNode.ts"
 // import "./isValidBST.ts"
-import "./isBalanced.ts"
+// import "./isBalanced.ts"
+import "./balanceBST.ts"
