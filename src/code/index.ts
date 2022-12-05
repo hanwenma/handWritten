@@ -53,4 +53,5 @@
 // import "./deleteNode.ts"
 // import "./isValidBST.ts"
 // import "./isBalanced.ts"
-import "./balanceBST.ts"
+// import "./balanceBST.ts"
+import "./heap.ts"
