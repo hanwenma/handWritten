@@ -54,4 +54,5 @@
 // import "./isValidBST.ts"
 // import "./isBalanced.ts"
 // import "./balanceBST.ts"
-import "./heap.ts"
+// import "./heap.ts"
+import "./sortArray.ts"
