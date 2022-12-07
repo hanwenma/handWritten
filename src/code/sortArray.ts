@@ -73,7 +73,7 @@ export function betterBubbleSort(arr) {
  【冒泡排序】顶配版本：
     冒泡排序时间复杂度在最好情况下是 O(n)，前提是 数组本身是有序
 */
-export function bestBubbleSort() {
+export function bestBubbleSort(arr) {
     const len = arr.length;
 
     let flag = false;
@@ -94,8 +94,9 @@ export function bestBubbleSort() {
 }
 
 // console.time()
-// console.log("betterBubbleSort = ", betterBubbleSort(arr.slice()));
+// console.log("bestBubbleSort = ", bestBubbleSort(arr.slice()));
 // console.timeEnd()
+
 
 /**
  * 
@@ -113,16 +114,16 @@ export function selectSort(arr) {
         // 初始化 minIndex 为当前区间第一个元素
         minIdx = i;
 
-         // i、j 分别定义当前区间的 上下界，i 是 左边界，j 是 右边界
+        // i、j 分别定义当前区间的 上下界，i 是 左边界，j 是 右边界
         for (let j = i; j < len; j++) {
-            if(arr[j] < arr[minIdx]){
+            if (arr[j] < arr[minIdx]) {
                 minIdx = j;
             }
         }
 
         // 若当前 minIdx 和 i 不相等
         // 则表明当前已经找到新的最小的元素，则进行交换
-        if(minIdx !== i){
+        if (minIdx !== i) {
             [arr[i], arr[minIdx]] = [arr[minIdx], arr[i]]
         }
     }
@@ -130,6 +131,45 @@ export function selectSort(arr) {
     return arr;
 }
 
+// console.time()
+// console.log("selectSort = ", selectSort(arr.slice()));
+// console.timeEnd()
+
+
+/**
+ * 
+ * 【插入排序】
+ * 时间复杂度：O(n^2)
+ * 
+*/
+
+export function insertSort(arr) {
+    const len = arr.length;
+
+    // temp 用来保存当前需要插入的元素
+    let temp
+
+    // i = 1 即默认第一位元素是有序的
+    for (let i = 1; i < len; i++) {
+        // j 用于帮助 temp 寻找自己应该有的定位
+        let j = i
+        temp = arr[i]
+
+        // j 此时为有序区域的 右边界，因此 j - 1 就是有序区域中的内容
+        // 判断 j 前面一个元素是否比 temp 大
+        while (arr[j - 1] > temp) {
+            // 如果是，则将 j 前面的一个元素后移一位，为 temp 让出位置
+            arr[j] = arr[j - 1]
+            j--
+        }
+
+        // 循环让位，最后得到的 j 就是 temp 的正确索引
+        arr[j] = temp
+    }
+
+    return arr
+}
+
 console.time()
-console.log("betterBubbleSort = ", selectSort(arr.slice()));
+console.log("insertSort = ", insertSort(arr.slice()));
 console.timeEnd()
