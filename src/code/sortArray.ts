@@ -87,7 +87,7 @@ export function bestBubbleSort() {
         }
 
         // flag 的值没有发生更改，意味着数组是有序的，需要进行额外排序
-        if(!flag) return arr;
+        if (!flag) return arr;
     }
 
     return arr
@@ -96,3 +96,40 @@ export function bestBubbleSort() {
 // console.time()
 // console.log("betterBubbleSort = ", betterBubbleSort(arr.slice()));
 // console.timeEnd()
+
+/**
+ * 
+ * 【选择排序】核心就是每次遍历确定最小值索引，每轮遍历结束把最小值放到数组头部
+ * 时间复杂度：O(n^2)
+ * 
+*/
+export function selectSort(arr) {
+    const len = arr.length;
+
+    let minIdx; // 定义最小值索引
+
+    // i 是排序期间的起点
+    for (let i = 0; i < len; i++) {
+        // 初始化 minIndex 为当前区间第一个元素
+        minIdx = i;
+
+         // i、j 分别定义当前区间的 上下界，i 是 左边界，j 是 右边界
+        for (let j = i; j < len; j++) {
+            if(arr[j] < arr[minIdx]){
+                minIdx = j;
+            }
+        }
+
+        // 若当前 minIdx 和 i 不相等
+        // 则表明当前已经找到新的最小的元素，则进行交换
+        if(minIdx !== i){
+            [arr[i], arr[minIdx]] = [arr[minIdx], arr[i]]
+        }
+    }
+
+    return arr;
+}
+
+console.time()
+console.log("betterBubbleSort = ", selectSort(arr.slice()));
+console.timeEnd()
