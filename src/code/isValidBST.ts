@@ -40,7 +40,6 @@ export function isValidBST(root) {
 }
 
 // 测试
-// 测试
 const root = {
   val: "3",
   left: {

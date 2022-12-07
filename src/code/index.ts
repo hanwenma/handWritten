@@ -51,5 +51,4 @@
 // import "./MinStack.ts"
 // import "./insertIntoBST"
 // import "./deleteNode.ts"
-// import "./isValidBST.ts"
-import "./sortedArrayToBST.ts"
+import "./isValidBST.ts"
