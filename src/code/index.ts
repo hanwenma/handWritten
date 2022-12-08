@@ -52,4 +52,5 @@
 // import "./insertIntoBST"
 // import "./deleteNode.ts"
 // import "./isValidBST.ts"
-import './sortArray'
+// import "./sortedArrayToBST.ts"
+import "./sortArray.ts"
