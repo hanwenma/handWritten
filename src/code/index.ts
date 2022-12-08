@@ -54,4 +54,6 @@
 // import "./isValidBST.ts"
 // import './sortArray'
 // import "./climbStairs.ts"
-import "./coinChange.ts"
+// import "./sortedArrayToBST.ts"
+// import "./sortArray.ts"
+import "./coinChange.ts";
