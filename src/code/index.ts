@@ -52,5 +52,6 @@
 // import "./insertIntoBST"
 // import "./deleteNode.ts"
 // import "./isValidBST.ts"
-import './sortArray'
-import "./climbStairs.ts"
+// import './sortArray'
+// import "./climbStairs.ts"
+import "./coinChange.ts"
