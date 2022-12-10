@@ -14,7 +14,7 @@ export function knapsack(n, c, w, value) {
   // res 用来记录所有组合方案中的最大值
   let res = -Infinity;
 
-  for (let i = 1; i <= n; i++) {
+  for (let i = 1; i < n; i++) {
     for (let v = c; v >= w[i]; v--) {
       // 写出状态转移方程
       dp[v] = Math.max(dp[v], dp[v - w[i]] + value[i]);
