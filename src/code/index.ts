@@ -56,4 +56,5 @@
 // import "./climbStairs.ts"
 // import "./sortedArrayToBST.ts"
 // import "./sortArray.ts"
-import "./coinChange.ts";
+// import "./coinChange.ts";
+import "./knapsack.ts"
