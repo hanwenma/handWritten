@@ -59,4 +59,5 @@
 // import "./coinChange.ts";
 // import "./knapsack.ts"
 // import "./lengthOfLIS.ts"
-import "./longestPalindrome.ts"
+// import "./longestPalindrome.ts"
+import "./buildTree.ts"
