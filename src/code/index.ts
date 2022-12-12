@@ -60,4 +60,5 @@
 // import "./knapsack.ts"
 // import "./lengthOfLIS.ts"
 // import "./longestPalindrome.ts"
-import "./buildTree.ts"
+// import "./buildTree.ts"
+import "./numIslands.ts"
