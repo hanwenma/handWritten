@@ -61,4 +61,5 @@
 // import "./lengthOfLIS.ts"
 // import "./longestPalindrome.ts"
 // import "./buildTree.ts"
-import "./numIslands.ts"
+// import "./numIslands.ts"
+import "./mergeSection.ts"
