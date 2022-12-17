@@ -64,5 +64,5 @@
 // import "./numIslands.ts"
 // import "./mergeSection.ts"
 // import "./lowestCommonAncestor.ts"
-
-import "./findMedianSortedArrays.ts"
+// import "./findMedianSortedArrays.ts"
+import "./minCost.ts"
