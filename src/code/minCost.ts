@@ -23,21 +23,24 @@ export function minCost(costs: number[][]) {
   const cloum = costs[0].length;
 
   // 初始化 dp 数组
-  const dp = new Array(row).fill(new Array(cloum).fill(0));
+  const dp = new Array(row);
+  for (let i = 0; i < row; i++) {
+    dp[i] = new Array(cloum);
+  }
 
   // 初始化状态值
-  dp[0][0] = costs[0][0]; // 0 号 红
-  dp[0][1] = costs[0][1]; // 0 号 蓝
-  dp[0][2] = costs[0][2]; // 0 号 绿
+  dp[0][0] = costs[0][0]; // 0 号 红  17
+  dp[0][1] = costs[0][1]; // 0 号 蓝  2
+  dp[0][2] = costs[0][2]; // 0 号 绿  17
 
   // 开始更新刷到每一个房子时的状态值
   for (let i = 1; i < row; i++) {
     // 更新刷到当前房子时，给当前房子选用第 0 种油漆对应的最小总价
     dp[i][0] = Math.min(dp[i - 1][1], dp[i - 1][2]) + costs[i][0];
     // 更新刷到当前房子时，给当前房子选用第 1 种油漆对应的最小总价
-    dp[i][1] = Math.min(dp[i - 1][2], dp[i - 1][0]) + costs[i][1];
+    dp[i][1] = Math.min(dp[i - 1][0], dp[i - 1][2]) + costs[i][1];
     // 更新刷到当前房子时，给当前房子选用第 2 种油漆对应的最小总价
-    dp[i][2] = Math.min(dp[i - 1][1], dp[i - 1][0]) + costs[i][2];
+    dp[i][2] = Math.min(dp[i - 1][0], dp[i - 1][1]) + costs[i][2];
   }
 
   // 返回刷到最后一个房子时，所有可能出现的总价中的最小值
