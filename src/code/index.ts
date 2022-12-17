@@ -62,4 +62,5 @@
 // import "./longestPalindrome.ts"
 // import "./buildTree.ts"
 // import "./numIslands.ts"
-import "./mergeSection.ts"
+// import "./mergeSection.ts"
+import "./lowestCommonAncestor.ts"
