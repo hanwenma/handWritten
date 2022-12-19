@@ -65,4 +65,5 @@
 // import "./mergeSection.ts"
 // import "./lowestCommonAncestor.ts"
 // import "./findMedianSortedArrays.ts"
-import "./minCost.ts"
+// import "./minCost.ts"
+import "./rainTrap.ts"
