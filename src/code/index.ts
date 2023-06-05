@@ -67,5 +67,6 @@
 // import "./findMedianSortedArrays.ts"
 // import "./minCost.ts"
 // import "./rainTrap.ts"
+// import "./concurrencyControl.ts"
 
-import "./concurrencyControl.ts"
+import "./queryArray.ts"
